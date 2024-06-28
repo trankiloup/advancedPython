@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Default Title{% endblock %}</title>
+</head>
+<body>
+<nav>
+    <!-- Other navigation items -->
+    {% if user.is_authenticated %}
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    <a href="{% url 'favorites' %}">Favorite</a>
+    <a href="{% url 'publish' %}">Publish</a>
+    <a href="{% url 'WhatIPublishView' user.id %}">What I Publish</a>
+    {% endif %}
+    <a href="{% url 'register' %}">Register</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'home' %}">Home</a>
+</nav>
+
+
+<main>
+    {% block content %}
+    <!-- This is where the content from child templates will be inserted -->
+    {% endblock content %}
+</main>
+
+<footer>
+    <!-- Footer content goes here -->
+</footer>
+</body>
+</html>

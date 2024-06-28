@@ -1,0 +1,81 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "user1",
+      "password": "pbkdf2_sha256$216000$ab$wDPW4C5...",
+      "last_login": "2024-06-28T15:25:55Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "user2",
+      "password": "pbkdf2_sha256$216000$ab$wDPW4C5...",
+      "last_login": "2024-06-28T15:25:55Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "username": "user3",
+      "password": "pbkdf2_sha256$216000$ab$wDPW4C5...",
+      "last_login": "2024-06-28T15:25:55Z"
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 1,
+    "fields": {
+      "title": "First Article",
+      "author": 1,
+      "created": "2023-01-01T00:00:00Z",
+      "synopsis": "This is the synopsis of the first article",
+      "content": "Full content of the first article"
+    }
+  },
+    {
+    "model": "articles.article",
+    "pk": 2,
+    "fields": {
+      "title": "Second Article",
+      "author": 1,
+      "created": "2023-01-01T00:00:00Z",
+      "synopsis": "This is the synops awsum article",
+      "content": "Full content of the second article"
+    }},
+  {
+    "model": "articles.article",
+    "pk": 3,
+    "fields": {
+      "title": "Thirst Article",
+      "author": 1,
+      "created": "2023-01-01T00:00:00Z",
+      "synopsis": "This is the synops awsum article",
+      "content": "Full content of the seasdacond article"
+    }},
+  {
+    "model": "articles.article",
+    "pk": 4,
+    "fields": {
+      "title": "Fourth Article",
+      "author": 2,
+      "created": "2023-01-01T00:00:00Z",
+      "synopsis": "This is the synops awsum article",
+      "content": "Full content of the seasdacond article"
+    }},
+  {
+    "model": "articles.article",
+    "pk": 5,
+    "fields": {
+      "title": "Fith Article",
+      "author": 3,
+      "created": "2023-01-01T00:00:00Z",
+      "synopsis": "This is the synops awsum article",
+      "content": "Full content of the seasdacond article"
+    }}
+
+]
