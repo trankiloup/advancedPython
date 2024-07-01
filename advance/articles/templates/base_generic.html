@@ -8,6 +8,7 @@
 <nav>
     <!-- Other navigation items -->
     {% if user.is_authenticated %}
+    <p>Logged as {{ user.username }}</p>
     <form method="post" action="{% url 'logout' %}">
         {% csrf_token %}
         <button type="submit">Logout</button>
@@ -15,10 +16,19 @@
     <a href="{% url 'favorites' %}">Favorite</a>
     <a href="{% url 'publish' %}">Publish</a>
     <a href="{% url 'WhatIPublishView' user.id %}">What I Publish</a>
-    {% endif %}
-    <a href="{% url 'register' %}">Register</a>
-    <a href="{% url 'login' %}">Login</a>
     <a href="{% url 'home' %}">Home</a>
+    {% else %}
+    <div style="display: flex; justify-content: space-evenly">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'home' %}">Home</a>
+    </div>
+    {% endif %}
 </nav>
 
 

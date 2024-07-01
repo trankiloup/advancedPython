@@ -1,25 +1,23 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>Articles</h1>
-  <table>
-    <thead>
-      <tr>
+<h1>Articles</h1>
+{% load humanize %}
+
+<table>
+    <tr>
         <th>Title</th>
-        <th>Synopsis</th>
-        <th>Created</th>
-        <th>Details</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for article in articles %}
-        <tr>
-          <td>{{ article.title }}</td>
-          <td>{{ article.synopsis }}</td>
-          <td>{{ article.created }}</td>
-          <td><a href="{% url 'article-detail' article.pk %}">View Details</a></td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+        <th>Abstract</th>
+        <th>Published Date</th>
+        <th>Published Since</th>
+    </tr>
+    {% for article in articles %}
+    <tr>
+        <td>{{ article.title }}</td>
+        <td>{{ article.synopsis|truncatechars:20 }}</td>
+        <td>{{ article.created }}</td>
+        <td>{{ article.created|timesince }} ago</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}

@@ -9,7 +9,7 @@ from django.contrib.auth.views import LogoutView
 from django.views.generic import ListView, DetailView
 from .forms import RegisterForm, ArticleForm
 from .models import Article, UserFavouriteArticle
-
+from django.http import HttpResponse
 
 class ArticleListView(ListView):
     model = Article
@@ -85,5 +85,11 @@ class PublishView(LoginRequiredMixin, CreateView):
 def add_to_favorites(request):
     article_id = request.POST.get('article_id')
     article = Article.objects.get(id=article_id)
-    UserFavouriteArticle.objects.create(user=request.user, article=article)
-    return redirect('favorites')
+    # Check if the user has already added this article to their favorites
+    if UserFavouriteArticle.objects.filter(user=request.user, article=article).exists():
+        # If the article is already in the user's favorites, return a message
+        return HttpResponse('This article is already in your favorites.')
+    else:
+        # If the article is not in the user's favorites, add it
+        UserFavouriteArticle.objects.create(user=request.user, article=article)
+        return redirect('favorites')
