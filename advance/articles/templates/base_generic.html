@@ -10,15 +10,20 @@
     <!-- Other navigation items -->
     {% if user.is_authenticated %}
     <div style="display: flex; justify-content: space-evenly">
-    <a>Logged as {{ user.username }}</a>
-    <form method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit" style="background: none!important; border: none; padding: 0!important; color: #069; text-decoration: underline; cursor: pointer;">Logout</button>
-</form>
-    <a href="{% url 'favorites' %}">Favorite</a>
-    <a href="{% url 'publish' %}">Publish</a>
-    <a href="{% url 'Publications' user.id %}">Publications</a>
-    <a href="{% url 'home' %}">Home</a>
+        <a>Logged as {{ user.username }}</a>
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit"
+                    style="background: none!important; border: none; padding: 0!important; color: #069; text-decoration: underline; cursor: pointer;">
+                Logout
+            </button>
+        </form>
+        <a href="{% url 'favorites' %}">Favorite</a>
+        <a href="{% url 'publish' %}">Publish</a>
+        <a href="{% url 'Publications' user.id %}">Publications</a>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'article-list' %}">Article</a>
+
     </div>
     {% else %}
     <div style="display: flex; justify-content: space-evenly">
@@ -30,6 +35,7 @@
         </form>
         <a href="{% url 'register' %}">Register</a>
         <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'article-list' %}">Article</a>
     </div>
     {% endif %}
 </nav>

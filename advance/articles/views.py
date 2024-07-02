@@ -102,14 +102,5 @@ class add_to_favorites(CreateView):
         if UserFavouriteArticle.objects.filter(user=self.request.user, article=form.instance.article).exists():
             self.template_name = 'already_in_favorites.html'
         else:
-            print("Form is valid")  # Debug print statement
             response = super().form_valid(form)
-            if self.object.pk:
-                print("Data saved successfully")  # Debug print statement
-            else:
-                print("Data not saved")  # Debug print statement
             return response
-    def form_invalid(self, form):
-        print("Form is not valid")  # Debug print statement
-        print(form.errors)  # Print form errors
-        return super().form_invalid(form)
