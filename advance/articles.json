@@ -27,14 +27,23 @@
     }
   },
   {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "username": "user4",
+      "password": "Toto17.",
+      "last_login": "2024-06-28T15:25:55Z"
+    }
+  },
+  {
     "model": "articles.article",
     "pk": 1,
     "fields": {
       "title": "First Article",
       "author": 1,
       "created": "2023-01-01T00:00:00Z",
-      "synopsis": "This is the synopsis of the first article",
-      "content": "Full content of the first article"
+      "synopsis": "JEan Claude VANDAME A des choses a dire",
+      "content": "Ah non attention, même si on frime comme on appelle ça en France... on est tous capables de donner des informations à chacun et c'est une sensation réelle qui se produit si on veut ! Et là, vraiment, j'essaie de tout coeur de donner la plus belle réponse de la terre !"
     }
   },
     {
@@ -44,8 +53,8 @@
       "title": "Second Article",
       "author": 1,
       "created": "2023-01-01T00:00:00Z",
-      "synopsis": "This is the synops awsum article",
-      "content": "Full content of the second article"
+      "synopsis": "I m Aware",
+      "content": "Quand tu fais le calcul, si vraiment tu veux te rappeler des souvenirs de ton perroquet, on vit dans une réalité qu'on a créée et que j'appelle illusion parce que spirituellement, on est tous ensemble, ok ? C'est cette année que j'ai eu la révélation !"
     }},
   {
     "model": "articles.article",
@@ -54,8 +63,8 @@
       "title": "Thirst Article",
       "author": 1,
       "created": "2023-01-01T00:00:00Z",
-      "synopsis": "This is the synops awsum article",
-      "content": "Full content of the seasdacond article"
+      "synopsis": "The easiest way to loose fat and build muscle in one week",
+      "content": "Si je t'emmerde, tu me le dis, là on voit qu'on a beaucoup à travailler sur nous-mêmes car en vérité, la vérité, il n'y a pas de vérité et cela même si les gens ne le savent pas ! Et là, vraiment, j'essaie de tout coeur de donner la plus belle réponse de la terre !\n\nTu vois, je suis mon meilleur modèle car il faut toute la splendeur du aware et je ne cherche pas ici à mettre un point ! Il y a un an, je t'aurais parlé de mes muscles."
     }},
   {
     "model": "articles.article",
@@ -75,7 +84,7 @@
       "author": 3,
       "created": "2023-01-01T00:00:00Z",
       "synopsis": "This is the synops awsum article",
-      "content": "Full content of the seasdacond article"
+      "content": "Full content of the seasd acond article"
     }}
 
 ]

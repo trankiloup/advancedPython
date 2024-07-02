@@ -1,0 +1,13 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h2>{{ article.title }}</h2>
+  <p>{{ article.content }}</p>
+
+  <!-- Add to favorites form -->
+  <form method="post" action="{% url 'add_to_favorites' %}">
+    {% csrf_token %}
+    <input type="hidden" name="article_id" value="{{ article.id }}">
+    <button type="submit">Add to favorites</button>
+  </form>
+{% endblock %}
